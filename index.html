@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <title>3D 模型預覽</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <style>
+      body {
+        margin: 0;
+        background: #f9f9f9;
+        font-family: -apple-system, "PingFang TC", Helvetica, sans-serif;
+        text-align: center;
+      }
+      model-viewer {
+        width: 100%;
+        max-width: 900px;
+        height: 520px;
+        margin: 40px auto;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>3D 模型預覽</h1>
+    <model-viewer
+      src="model.glb"
+      ios-src="model.usdz"
+      ar
+      camera-controls
+      auto-rotate
+      shadow-intensity="1"
+      environment-image="neutral">
+    </model-viewer>
+  </body>
+</html>
