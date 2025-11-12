@@ -1,35 +1,92 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
   <head>
-    <meta charset="utf-8" />
-    <title>3D 模型預覽</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>3D 模型預覽 | Verdit AR</title>
+
+    <!-- 載入 Google 官方 model-viewer 元件 -->
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
     <style>
       body {
         margin: 0;
-        background: #f9f9f9;
-        font-family: -apple-system, "PingFang TC", Helvetica, sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Segoe UI", Helvetica, Arial, sans-serif;
+        background-color: #fff;
+        color: #222;
         text-align: center;
       }
+
+      h1 {
+        font-size: 28px;
+        font-weight: 600;
+        margin-top: 40px;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 16px;
+        color: #555;
+        margin-bottom: 30px;
+      }
+
       model-viewer {
         width: 100%;
         max-width: 900px;
-        height: 520px;
-        margin: 40px auto;
-        display: block;
+        height: 500px;
+        margin: 0 auto;
+        background-color: #f9f9f9;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      }
+
+      footer {
+        font-size: 13px;
+        color: #888;
+        margin: 30px 0;
+      }
+
+      a.button {
+        display: inline-block;
+        padding: 12px 20px;
+        border-radius: 8px;
+        background: #007aff;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        transition: 0.2s;
+      }
+
+      a.button:hover {
+        background: #005ecb;
       }
     </style>
   </head>
+
   <body>
-    <h1>3D 模型預覽</h1>
+    <h1>Verdit 3D 模型預覽</h1>
+    <p>可旋轉、放大，並直接進入 AR 模式（支援 iPhone / Android）</p>
+
+    <!-- 🧱 模型顯示區 -->
     <model-viewer
-      src="model.glb"
-      ios-src="model.usdz"
+      src="model.glb"            <!-- 你的 glb 模型路徑 -->
+      ios-src="model.usdz"      <!-- 你的 usdz 模型路徑 -->
+      alt="3D 模型預覽"
       ar
+      ar-modes="webxr scene-viewer quick-look"
       camera-controls
       auto-rotate
       shadow-intensity="1"
       environment-image="neutral">
     </model-viewer>
+
+    <!-- 手機上快速開啟按鈕 -->
+    <p>
+      <a href="model.usdz" class="button">📱 在 iPhone 上開啟 AR</a>
+      &nbsp;&nbsp;
+      <a href="intent://arvr.google.com/scene-viewer/1.0?file=https%3A%2F%2F你的網址%2Fmodel.glb#Intent;scheme=https;package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;end;" class="button" style="background:#34a853;">🤖 在 Android 上開啟 AR</a>
+    </p>
+
+    <footer>© 2025 Verdit | Built with <a href="https://modelviewer.dev" target="_blank" style="color:#007aff;text-decoration:none;">model-viewer</a></footer>
   </body>
 </html>
