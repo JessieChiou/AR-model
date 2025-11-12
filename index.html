@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>3D 模型預覽 | Verdit AR</title>
+    <title>3D 模型預覽 | Verditek AR</title>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <style>
       body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"PingFang TC","Segoe UI",Helvetica,Arial,sans-serif;background:#fff;color:#222;text-align:center}
@@ -16,27 +16,30 @@
     </style>
   </head>
   <body>
-    <h1>Verdit 3D 模型預覽</h1>
+    <h1>Verditek 3D 模型預覽</h1>
     <p>可旋轉、放大，並直接進入 AR 模式（支援 iPhone / Android）</p>
 
     <model-viewer
-      src="3D-Glasses-Model.glb"
-      ios-src="3D-Glasses-Model.usdz"
-      alt="3D 模型預覽"
-      ar ar-modes="webxr scene-viewer quick-look"
-      camera-controls auto-rotate
+      src="Verditek_AR.glb"
+      ios-src="Verditek_AR.usdz"
+      alt="Verditek 3D 模型預覽"
+      ar
+      ar-modes="webxr scene-viewer quick-look"
+      camera-controls
+      auto-rotate
       shadow-intensity="1"
       environment-image="neutral">
     </model-viewer>
-
+    
     <p>
-      <a href="3D-Glasses-Model.usdz" class="button">📱 在 iPhone 上開啟 AR</a>
+      <a href="Verditek_AR.usdz" class="button">📱 在 iPhone 上開啟 AR</a>
       &nbsp;&nbsp;
       <a class="button" style="background:#34a853;"
-         href="intent://arvr.google.com/scene-viewer/1.0?file=https%3A%2F%2Fjessiechiou.github.io%2FAR-model%2F3D-Glasses-Model.glb#Intent;scheme=https;package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;end;">
+         href="intent://arvr.google.com/scene-viewer/1.0?file=https%3A%2F%2Fjessiechiou.github.io%2FAR-model%2FVerditek_AR.glb#Intent;scheme=https;package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;end;">
         🤖 在 Android 上開啟 AR
       </a>
     </p>
+
 
     <footer>© 2025 Verdit | Built with <a href="https://modelviewer.dev" target="_blank" style="color:#007aff;text-decoration:none;">model-viewer</a></footer>
   </body>
